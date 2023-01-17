@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>studentlogin</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='/addtask.css')}}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/88b5890a21.js" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+ <h1 class="text-center pt-3 pb-4" style=" color:black;">students</h1>
+   <div class="col-12">
+     <center>
+    <img src="https://cdn.dribbble.com/users/4241563/screenshots/11874468/media/7796309c77cf752615a3f9062e6a3b3d.gif" height="500px">
+     </center>
+ <br>
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-md-4">
+
+          <form  method="post">
+              <div class="form-group">
+
+                  <label for="rollno">Roll Number</label>
+                  <input type="text" class="form-control" name="studid" id="rollno">
+              </div>
+              <br>
+              <div class="form-group">
+
+                  <label for="sname">first Name</label>
+                  <input type="text" class="form-control" name="firstname" id="sname">
+              </div>
+              <br>
+              <div class="form-group">
+
+                  <label for="sem">lastname</label>
+                  <input type="text" class="form-control" name="lastname" id="sem">
+              </div>
+              <br>
+              <br>
+              <div class="form-group">
+
+                  <label for="email">Email</label>
+                  <input type="email" class="form-control" name="email" id="email">
+              </div>
+              <br>
+              <div class="form-group">
+                <div class="inputBox">
+                    <input type="number" placeholder="+9999999999" name="phonenumber">
+                </div>
+              </div>
+              <br>
+
+              <div class="form-group">
+                  <label for="password">password</label>
+                  <input type="password" class="form-control" name="password" id="email">
+              </div>
+              <br>
+            <div class="form-group">
+                <label for="password">section</label>
+                <select class="form-control" id="exampleFormControlSelect1" name="section">
+                  <option>MSDS</option>
+                  <option>MSCS</option>
+                  <option>MCCS</option>
+                  <option>MPCS</option>
+                  <option>PMCS</option>
+                  <option>BZC</option>
+                  <option>AZC</option>
+                  <option>Arts</option>
+                </select>
+              <br>            
+                  <button type="submit">Submit</button>
+                  
+              </div>
+</form>
+<br>
+<br>
+
+</div>
+
+
+</div>
+</div>
+
+
+

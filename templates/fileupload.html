@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table</title>
+    
+    <linkrel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"/>
+    </head>
+    <style>
+      .bgimg{
+          background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7LbL84JHLe0WI0M-RF3qrXe7f5o1aAaDKr0j3oJXn24SLBTLggiT_rr3h90SxFUhNsbw&usqp=CAU");
+          background-size:cover;
+          height:80vh;
+          width=80vw;
+        }
+        h4{
+          color:red
+        }
+        
+       
+      </style>
+    
+
+
+<boby>
+  <body class="col-12">
+    <div class="bgimg">
+      <div class="container">
+        <div class="row grid-3">
+          <div class="col-12 text-center mt-4">
+            <br>
+            <br>
+
+    <center><h4><i>ADD FILES FOR ASSIGNMENTS</i></h4></center>
+    <br>
+    <br>
+    
+     
+    <center><form method="POST" enctype="multipart/form-data">
+      <br>
+      <br>
+          
+        
+        <div class="form-group">
+          <label for="id">assignid</label>
+            <select class="form-control" id="exampleFormControlSelect1" name="option" width="15px" required/>
+            {% for i in assignments %}
+            <option>{{i[0]}} </option>
+            {% endfor %}
+      </select>
+    </div>
+    <br>
+    <br> 
+
+      <div>
+        <label>file upload</label>
+        <input type="file" name="file" placeholder="upload your File " size="15" required/>
+      </div> 
+      <br>
+      <br>
+      <div>
+        <label>section</label>
+        <input type="text" name="section" placeholder="section " size="15" required/>
+     </div>
+      <br>
+     
+      <br> 
+      <button>Submit</button></a>
+      <br>
+      <br>
+      <td><a href="fileupload.html"><button class="btn btn-primary">Edit </button> </a> </td>
+      <br>
+      <br>
+    </div></center>
+  </form>
+</div>
+</div>
+
+
+</body>
+</html>

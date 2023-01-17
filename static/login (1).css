@@ -1,0 +1,86 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+.bgimg{
+    background-image: url("https://res.cloudinary.com/digdliiab/image/upload/v1670651866/vsfvqzadjm90nmvcwl2b.jpg");
+    background-size: cover;
+    width:100vw;
+    height:100vh;
+}
+
+.one{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color:rgb(12, 12, 12);
+    background-color:#3dc676;
+    border-radius: 15px;
+    padding:10px;
+    border-style: none;
+    margin: 7px;
+    margin-top: 1.5rem;
+
+}
+.one:hover{
+ color:#101010;
+ background-color: white;
+}
+.two{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color:white;
+    background-color: #319fd6;
+    border-radius: 15px;
+    padding:10px;
+    border-style: none;
+    margin:10px;
+    margin-top:25px;
+}
+.two:hover{
+    color:#101010;
+    background-color: white;
+   }
+.admin{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color:rgb(12, 12, 12);
+    background-color:#d8556d;
+    border-radius: 15px;
+    padding:15px;
+    border-style: none;
+    margin: 7px;
+    margin-top: 1.5rem;
+
+}
+.admin:hover{
+ color:#101010;
+ background-color: rgb(204, 233, 136);
+}  
+.bgimg2{
+    background-image: url("https://res.cloudinary.com/digdliiab/image/upload/v1670652443/569e826d96f4934f654d944aa89cad3b_jhw0fy.jpg");
+    background-size: cover;
+    width:100vw;
+    height:140vh;
+} 
+.three{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color:rgb(20, 20, 20);
+    background-color: #f8f9f7;
+    border-radius: 15px;
+    padding:10px;
+    border-style: none;
+    margin:10px;
+    margin-top:25px;
+}
+.three:hover{
+    color:#fdfcfc;
+    background-color: rgb(122, 121, 121);
+   } 
+
+
+

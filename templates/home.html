@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Design With Animation Using Only HTML & CSS | Waves Animation, Dropdown Menu, Multiple Circle Rotation</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='sub1.css')}}">
+    <script src="https://kit.fontawesome.com/88b5890a21.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+<div class="wrapper">
+    <header>
+
+        <nav>
+            <ul>
+                <li><a href="#">Integration</a>
+                    <ul>
+                        <li><a href="#">Students</a></li>
+                        <li><a href="#">Attendance</a></li>
+                        <li><a href="#">Records</a></li>
+                        <li><a href="#">Assignment</a></li>
+                        
+                    </ul>
+                </li>
+                
+                <li><a class="box" href="#"><input class="calender" type="date"/>Calender</a></li>
+                
+                <a href="{{url_for('create1')}}"><button class="enterp">Sign Up</button></a>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content">
+        <div class="text">
+            
+            <a href="{{url_for('studentlogin')}}"><button class="enterp">Login</button></a>
+        </div>
+        <div class="img">
+            <div class="social-icons">
+                <i class="fa-solid fa-paperclip" id="def1"></i>
+                <i class="fa-sharp fa-solid fa-users"></i>
+                <i class="fa-solid fa-comment"></i>
+                <i class="fa-sharp fa-solid fa-book-open-reader"></i>
+                <i class="fa-solid fa-file-pen"></i>
+            </div>
+            <img class="email-icon" src="{{url_for('static',filename='images/email-icon.png')}}" alt="">
+        </div>
+    </div>
+
+<div class="wave">
+    <img src="{{url_for('static',filename='images/wave.svg')}}" alt="" width="100%">
+</div>
+
+</div>
+<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+</body>
+</html>

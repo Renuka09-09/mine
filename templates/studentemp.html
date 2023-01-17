@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='studentemp.css')}}">
+    <title>Document</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/88b5890a21.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    body {
+      margin: 0;
+    }
+  
+    .center {
+      display: flex;
+      
+      padding:25px;
+      height: 100vh;
+    }
+    
+</style>
+<body>
+    
+    <div id="sideNav">
+         <nav>
+             <ul>
+                 <li><a href="#home">Home</a>  </li>
+                 
+                 <li><a href="viewassignment">Assignments</a>  </li>
+                 <li><a href="viewstudents">Students</a>  </li>
+                 <li><a href="viewmarks">Marks</a>  </li>
+                 <li><a href="viewattendence">Attendence</a></li>
+                 <li><a href="{{url_for('fileupload')}}">File Upload</a></li>
+                 <li><a href="#help">Help</a></li>
+                 <li><a href="{{url_for('home')}}">Logout</a></li>
+             </ul>
+         </nav>
+    </div>
+    <div id="menuBtn" class="col-12">
+        <img src="https://www.shutterstock.com/image-vector/menu-icon-web-600w-1409803673.jpg" id="menu">
+        </div>     
+            <script>
+                
+                var menuBtn = document.getElementById("menuBtn")
+                var sideNav = document.getElementById("sideNav")
+                var menu = document.getElementById("menu")
+    
+                sideNav.style.left = "-250px";
+    
+    
+                menuBtn.onclick = function(){
+                    if(sideNav.style.left=="-250px"){
+                        sideNav.style.left="0";
+                        menu.src = "https://www.shutterstock.com/image-vector/cancel-vector-icon-x-deny-600w-1935766258.jpg";
+                    }
+                    else{
+                        sideNav.style.left ="-250px";
+                        menu.src = "https://www.shutterstock.com/image-vector/menu-icon-web-600w-1409803673.jpg";
+    
+                    }
+                }
+            </script> 
+    <div id="serviceSection">
+        <div class="bgimg2 pt-5 pb-5">
+           <div class="container col-12 col-lg-8">
+               <div class="row">
+                   <div class="col-12 col-md-4">
+                       <div class="cardsi p-3">
+                        <h1 class="chead"> {{id1}}</h1>
+                        <h2 class="chead">{{firstName}} {{lastname}}</h2>
+                        <a href="taskempstatus.html">
+                     {% for i in assignments %}
+                        <div class="assignmentsmanage">
+                           <h6>{{i[0]}}</h6>
+                           <h6>{{i[1]}}</h6>
+                           <h6>{{i[2]}}</h6>
+                           
+                           <h6>{{i[4]}}</h6>
+                           <h6>{{i[3]}}</h6>
+                           <h6>{{i[5]}}</h6>
+                           
+                           
+                        </div></a>
+                    {% endfor %}
+                       </div>
+                      
+                          
+                   
+                           
+               </div>
+           </div>
+        </div>
+    </div>
+       
+    <script src="http s://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+</body>
+</html>

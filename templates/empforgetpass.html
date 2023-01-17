@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>employee forgotpassword</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <style>
+        body{
+            background-image: url("https://64.media.tumblr.com/44b8e89d5f69751d58201c06b036a10b/tumblr_pgfu7yiKxE1rut1rdo1_500.gif");
+            background-size: cover;
+        }
+        .would{
+            background:linear-gradient(#006992,#2E1760);
+            box-shadow: 0px 20px 15px  rgb(18, 63, 106);
+            color: aliceblue;
+
+        }
+        .ghost{
+            border-radius: 5% 20%;
+            box-shadow: 0px 5px 7px whitesmoke;
+            background-color: rgb(235, 231, 231);
+
+        }
+    </style>
+    <script>
+    function validate(){
+        var key=document.getElementById("key").value
+        var password=document.getElementById("password").value
+        var email=document.getElementById("email").value
+       var passcode=document.getElementById("passcode").value
+        var keyCheck=/^[a-zA-Z ]+$/
+        var passwordCheck=/^[a-zA-Z ]+#[0-9]{3}$/
+        var emailCheck=/^[A-Za-z0-9.#]+@[a-z]+\.[a-z]{2,3}$/
+       // var mobileCheck=/^[6-9]\d{9}$/
+       //var passCodeCheck=/^[a-z]{4}[-]?[a-z]{4}[-]?[a-z]{4}[-?[a-z]{4}[ ]$/
+       if(key=="" | key.length<3){
+            alert("Please enter your name")
+            return false
+        }
+        if(!key.match(keyCheck)){
+            alert("Name must carry only characters and First letter must be uppercase")
+            return false
+        }
+        if(password==""){
+            alert("Please enter password")
+            return false
+        }
+        if(!password.match(passwordCheck)){
+            alert("Check your password")
+            return false
+        }
+        if(email==""){
+            alert("Email id is mandatory");
+            return false
+        }
+        if(!email.match(emailCheck)){
+            alert("Please check your mail format");
+            return false
+        }
+        /*if(passcode==""){
+            alert("Enter passcode")
+            return false
+        }
+        if(!passcode.match(passCodeCheck)){
+            alert("Please check your passcode format");
+            return false
+        }*/
+    return true
+    }
+</script>
+</head>
+<body>
+    <form onsubmit="return validate1()">
+    <div class="container d-flex flex-row justify-content-center">
+        <div class="row">
+           
+                <div id="validate_password"></div><br/>
+                <label for="firstName" class="col-12 control-label" style="font-weight:bold;">email</label>
+                <div class="col-12">
+                    <input id="email"  placeholder="Enter Your email" name="email" class="form-control ghost">
+                </div>
+                
+             <div id="validate_name"></div><br/>
+             <label for="password" class="col-12 control-label" style="font-weight:bold;">Password</label>
+             <div class="col-12">
+                <input type="text" id="password" name="password" placeholder="Enter Your Password" class="form-control ghost">
+             </div>
+                
+            <div id="validate_passcode"></div><br/>  
+    </div>
+</div>
+
+</div>
+<div class="col-12 text-center" style="margin-top:10px;">
+    <button class="btn btn-primary mt-3 mr-2" > Submit </button>
+    <a href="{{url_for('employeelogin')}}" class="mt-3 mr-2">Back</a>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+</form>
+</body>
+</html>

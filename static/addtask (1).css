@@ -1,0 +1,9 @@
+.container{
+    background:linear-gradient(45deg,skyblue,whitesmoke)
+}
+label{
+    font-weight: bold;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
