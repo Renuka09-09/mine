@@ -145,7 +145,7 @@ def studentemp():
         cursor.execute('SELECT studid  from students where email=%s',[session['email']])
         data=cursor.fetchone()
         id1=data[0]
-        cursor.execute('SELECT * from assignments')
+        cursor.execute('SELECT * from assignments where assign_to=%s',[id1])
         assignments=cursor.fetchall()
         print(assignments)
         cursor.close()
@@ -291,18 +291,18 @@ def addtask():
         print(id2)
         
         cursor.execute('insert into assignments(id,assigning,date,assign_to) values(%s,%s,%s,%s)',[id1,id2,duedate,assign_to])
-        
+        cursor=mysql.connection.cursor()
         
         cursor.execute('SELECT PASSCODE from admin')
         passcode=cursor.fetchone()[0]
         cursor.execute('SELECT email from admin')
-        email_from=cursor.fetchone()[0]
+       
         
         
         
         
         cursor.execute('SELECT email from students where studid=%s',[assign_to])
-       
+        email_to=cursor.fetchone()[0]
         mysql.connection.commit()
         subject=f'assidnment is updated'
         body=f'\nYou completed the assignment with in time'
@@ -348,10 +348,10 @@ def fileupload():
 def view6(id2):
     cursor=mysql.connection.cursor()
     cursor.execute('SELECT file from upload where assignid=%s',[id2])
-    data=cursor.fetchone()[1]
+    data=cursor.fetchone()[2]
     print(data)
     cursor.execute('select filename from upload where assignid=%s',[id2])
-    filename=cursor.fetchone()[1]
+    filename=cursor.fetchone()[2]
     print(filename)
    #mention as_attachment=True to download the file--remove it to display the file
     return send_file(BytesIO(data),download_name=filename)
@@ -389,7 +389,7 @@ def password1():
             return redirect(url_for('home'))
         else:
             return redirect(url_for('password1'))
-    return render_template('empforgetpass.html')
+    return render_template('studforgetpass.html')
 
 
 
