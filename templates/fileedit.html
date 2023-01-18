@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='/upload.css')}}">
+</head>
+<body>
+  <form method="POST"  enctype="multipart/form-data" >
+  <h1>EDIT uploadfile</h1>
+  <div>
+      <select name="choice">
+        {% for i in data %}
+        <option>{{i[0]}}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div>
+    <label>file</label>   
+    <input type="text" name="name" placeholder= "Enter file name" size="15" required /> 
+    </div>
+    <div>
+    <label> studid </label>   
+    <input type="interger" name="name" placeholder= "enter your id" size="15" required />
+    </div>
+    <div>
+      <label> assignid</label>
+      <input type="interger" name="name" placeholder= "enter your id" size="15" required />
+    </div>
+    
+    <div>
+      <label>section</label>
+      <input type="textr" name="name" placeholder= "enter your section" size="15" required />
+    </div>
+    </div>
+    <div>
+        <label>filename</label>
+        <input type="textr" name="name" placeholder= "enter your filename" size="15" required />
+      </div>
+    </div>
+    <button>SUBMIT</button>
+  </form>  
+</body>
+</html>

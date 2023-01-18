@@ -5,9 +5,9 @@ from datetime import date
 from datetime import datetime
 from io import BytesIO
 from threading import Thread
-from py_mail import mail_sender
+
 import smtplib
-from email.message import EmailMessage
+
 app=Flask(__name__)
 app.secret_key='projects'
 app.config['SESSION_TYPE']='filesystem'
@@ -356,6 +356,31 @@ def view6(id2):
    #mention as_attachment=True to download the file--remove it to display the file
     return send_file(BytesIO(data),download_name=filename)
     return render_template('allfiles.html',data=filename)
+@app.route('/fileedit',methods=['GET','POST'])
+def edit():
+    cursor=mysql.connection.cursor()
+    cursor.execute('select assignid from upload')
+    data=cursor.fetchall()
+    if session.get('admin'):
+        if request.method=='POST':
+            id1=request.form['choice']
+           
+            File=request.files['File']
+            
+            
+            studid=request.form['studid']
+            assignid=request.form['assignid']
+            section=request.form['section']
+            filename=request.form['filename']
+            
+            
+            cursor=mysql.connection.cursor()
+            cursor.execute('update upload set File=%s,studid=%s,section=%s,filename=%s where assidnid=%s',[File.read(),studid,section,filename,id1])
+            mysql.connection.commit()
+            cursor.close()
+            return redirect(url_for('fileupload',adminid=session['admin']))
+        return render_template('fileedit.html',data=data)
+    return redirect(url_for('adminpanel'))
 
     
 @app.route('/forgetpassword',methods=['GET','POST'])
